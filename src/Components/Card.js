@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Card = () => {
-    return "Im A Card Component";
+const Card = (props) => {
+    console.log('---------------- This is card Props ---------------')
+    const { likes } = props;
+
+    return <div>Likes Number {likes } and comment {props.commments}</div>;
 }
 
 
