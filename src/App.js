@@ -6,6 +6,31 @@ import './App.css'
 import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      showUsers:false,
+      showUsersText:"",
+       Users:[
+    {id:1,name:"anas",lang:"React"},
+    {id:2,name:"ahmad",lang:"nodeJs"},
+    {id:3,name:"ali",lang:"PHP"},
+  ],
+  Title:"This is My Users",
+  counter:0,
+    }
+
+
+  }
+
+
+  Increase = ()=> {
+    this.setState({
+      counter:this.state.counter+1,
+      Title:"New Value"
+    })
+  }
   render() {
     const user = {
       name:"anas",
@@ -16,7 +41,6 @@ class App extends Component {
       desc : "this is a awesome!!"
     }
     const myStyle = {
-      backgroundColor : '#e0d8d8',
       fontSize:'20px',
       "@media (max-width:500px)":{
         backgroundColor:"red",
@@ -28,11 +52,14 @@ class App extends Component {
     return (
    
       <StyleRoot>
+        <h1>{this.state.Title}</h1>
       <div className='container'  style={myStyle} >
-        <User name="anas" any="React" info ={user} />
-        <User name="ahmad" any="nodeJs"/>
-        <User name="ali" any="Redux"/>       
-      </div>
+        <User name={this.state.Users[0].name} lang={this.state.Users[0].lang}/>
+        <User name={this.state.Users[1].name} lang={this.state.Users[1].lang}/>
+        <User name={this.state.Users[2].name} lang={this.state.Users[2].lang}/>
+        <p>{this.state.counter}</p>
+        <button onClick={this.Increase}>+</button>
+      </div>  
       </StyleRoot>
 
     );
