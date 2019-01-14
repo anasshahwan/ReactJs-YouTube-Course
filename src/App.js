@@ -13,14 +13,18 @@ class App extends Component {
       desc : "this is a awesome!!"
     }
 
-    
+    const numbers =[2992,22,22,222,2,2,2,2]
     return (
       <div>
       <div>Hello React</div>
-      <User name="anas" any="React" info ={user} />
-        <User name="ahmad" any="nodeJs"/>
-        <User name="ali" any="Redux"/> 
-        <Card likes ={22} comments={comments}/>
+      <User name="anas"  isLoggedIn={false} any="React" info ={user} />
+        <User name="ahmad" any="nodeJs">
+          <h1>This is Children Data</h1>
+        </User>
+        <User name="ali" any="Redux">
+            <h1>This is Children data</h1>
+        </User>
+        <Card likes ={22} numbers={numbers} comments={comments}/>
       
       </div>
     );

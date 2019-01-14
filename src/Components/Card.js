@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Card = (props) => {
     console.log('---------------- This is card Props ---------------')
@@ -9,3 +10,9 @@ const Card = (props) => {
 
 
 export default Card;
+
+Card.propTypes  = {
+    numbers: PropTypes.array,
+    likes : PropTypes.node
+
+}
