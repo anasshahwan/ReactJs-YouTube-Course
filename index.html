@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<title>Title of the document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+ 
+</body>
+<script type="text/babel">
+    class App extends React.Component {
+        render(){
+            return(
+                <div>Im a Person Component <Test/></div>
+            )
+        }
+    }
+    class Test extends React.Component {
+        render(){
+            return(
+                <div>  
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                <div>HEllo React</div>
+                </div>
+            )
+        }
+    }
+ReactDOM.render(<App/>,document.getElementById('root'))
+</script>
+</html>
