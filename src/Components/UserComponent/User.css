@@ -1,3 +1,4 @@
+
 .userCard {
     border: 1px solid black;
     padding: 10px;
@@ -9,10 +10,12 @@
     font-weight: bold;
     font-size: 16px;
     background-color: black;
-    color:white;
+    color: white;
+    padding:8px
 }
+
 .header:hover{
-    background-color: red
+    background-color:red;
 }
 @media (max-width:500px){
     .userCard {
