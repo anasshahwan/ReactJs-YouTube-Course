@@ -25,12 +25,23 @@ class App extends Component {
   }
 
 
-  Increase = ()=> {
-    this.setState({
-      counter:this.state.counter+1,
-      Title:"New Value"
-    })
-  }
+  Increase = (id) => {
+
+    if(id == "+"){
+      console.log("+")
+    }
+    
+    else if (id == '-'){
+      console.log("-")
+    }
+  // this.setState({
+  //   counter:this.state.counter+1,
+  //   Title: "New Value",
+  // })
+  
+}
+
+
   render() {
     const user = {
       name:"anas",
@@ -59,6 +70,8 @@ class App extends Component {
         <User name={this.state.Users[2].name} lang={this.state.Users[2].lang}/>
         <p>{this.state.counter}</p>
         <button onClick={this.Increase}>+</button>
+        <button onClick={this.Increase}>-</button>
+
       </div>  
       </StyleRoot>
 
