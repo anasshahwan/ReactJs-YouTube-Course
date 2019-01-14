@@ -42,6 +42,11 @@ class App extends Component {
 }
 
 
+showUsers = () => {
+  this.setState({showUsers:!this.state.showUsers})
+}
+
+
   render() {
     const user = {
       name:"anas",
@@ -59,20 +64,34 @@ class App extends Component {
     }
     }
 
+    let Users;
+    if(this.state.showUsers){
+    Users = 
+        <div className="container" style={myStyle}>
+
+        <User name={this.state.Users[0].name} lang={this.state.Users[0].lang}  />
+        <User name={this.state.Users[1].name} lang={this.state.Users[1].lang} />
+        <User name={this.state.Users[2].name} lang={this.state.Users[2].lang} /> 
+            <p>{this.state.counter}</p>
+            <button onClick={()=> this.Increase("+")} >+</button>
+            <button onClick={()=> this.Increase("-") }>-</button>
+        
+            </div>
+      
+    }else {
+      Users = 
+      <div>No Users</div>
+      
+    }
+    
     
     return (
    
       <StyleRoot>
         <h1>{this.state.Title}</h1>
-      <div className='container'  style={myStyle} >
-        <User name={this.state.Users[0].name} lang={this.state.Users[0].lang}/>
-        <User name={this.state.Users[1].name} lang={this.state.Users[1].lang}/>
-        <User name={this.state.Users[2].name} lang={this.state.Users[2].lang}/>
-        <p>{this.state.counter}</p>
-        <button onClick={this.Increase}>+</button>
-        <button onClick={this.Increase}>-</button>
+        {Users}
+     <button onClick={this.showUsers}> {this.state.showUsers ? "Hide Users" : "Show Users"} </button>
 
-      </div>  
       </StyleRoot>
 
     );
