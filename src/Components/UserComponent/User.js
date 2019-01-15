@@ -6,9 +6,9 @@ class User extends Component {
   render() {
         const {name , any } = this.props;
     return (
-            <div className='userCard'>  <div className="header">Im A User Component </div>
+            <div className='userCard'  >  <div className="header">Im A User Component </div>
             <p>My name is {name }  and i love {any} </p>
-            <UserButton> Check Your Todo</UserButton>
+            <UserButton onClick= {this.props.deleteUser}> Check Your Todo</UserButton>
 
       </div>
     );
